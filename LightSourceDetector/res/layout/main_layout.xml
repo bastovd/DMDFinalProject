@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id = "@+id/screen"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:clickable="false">
+
+            <FrameLayout
+                android:id = "@+id/back_camera"
+                android:orientation="vertical"
+                android:layout_width="160dp"
+                android:layout_height="90dp"
+                android:clickable="false">
+
+            </FrameLayout>
+
+            <com.dc.LightSourceDetector.PreviewImageView
+                android:id="@+id/preview_snapshot"
+                android:layout_width="160dp"
+                android:layout_height="90dp"
+                />
+
+            <ImageView
+                android:id="@+id/take_picture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#332244"
+                android:clickable="true"
+                />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id = "@+id/unity_player"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+        <!--<SurfaceView
+            android:id = "@+id/front_camera"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </SurfaceView>-->
+
+    </LinearLayout>
+
+    <!--<Button
+        android:id = "@+id/start_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp" />-->
+</FrameLayout>
