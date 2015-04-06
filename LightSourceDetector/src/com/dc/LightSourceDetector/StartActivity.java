@@ -3,6 +3,7 @@ package com.dc.LightSourceDetector;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -36,9 +37,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by Anton on 1/13/2015.
@@ -73,12 +77,14 @@ public class StartActivity extends Activity{
     int highlight4 = 0; // mid nose
     int highlight5 = 0; // right nose
 
-
+    PreviewImageView iv = null;
 
     // The first rear facing camera
     int  defaultCameraId;
     public boolean safeToTakePicture = false;
     public boolean safeToDetectFace = false;
+
+    private static final Pattern PATTERN = Pattern.compile("[0-9]+_bgw_yaleB[0-9]+_P00A(.{1}[0-9]+)E(.{1}[0-9]+)&bgw_yaleB[0-9]+_P00A(.{1}[0-9]+)E(.{1}[0-9]+).*");
 
     private Handler takePictureHandler;
     public Runnable updateFacePicture = new Runnable()
@@ -86,7 +92,7 @@ public class StartActivity extends Activity{
         public void run()
         {
             if (safeToTakePicture) {
-                PreviewImageView iv = (PreviewImageView) findViewById(R.id.preview_snapshot);
+                iv = (PreviewImageView) findViewById(R.id.preview_snapshot);
                 iv.setImageBitmap(previewImageSnapshot);
                 storeImage(previewImageSnapshot,1);
                 snapshotImageRGB = previewImageSnapshot.copy(Bitmap.Config.RGB_565, true);
@@ -113,10 +119,15 @@ public class StartActivity extends Activity{
                     croppedSnapshotImageRGB = croppedFaceBitmap.copy(Bitmap.Config.RGB_565, true);
                     croppedBackImageRGB = previewImageSnapshot.copy(Bitmap.Config.RGB_565, true);
                     getBackgroundMask(croppedBackImageRGB, faceBoundsL.left, faceBoundsL.right, faceBoundsL.bottom);
+
                     croppedBackImageThreshold = croppedBackImageRGB.copy(Bitmap.Config.RGB_565, true);
-                    croppedBackImageThreshold = getThresholdImage(croppedBackImageThreshold, 200);
+                    getThresholdImage(croppedBackImageThreshold, 200);
                     iv.setImageBitmap(croppedBackImageThreshold);
-                    boolean hasBackLight = false;
+
+                    //storeImage(croppedBackImageRGB,4);
+                    //storeImage(croppedBackImageThreshold,5);
+
+                    /*boolean hasBackLight = false;
                     for (int i = 0; i < croppedBackImageThreshold.getWidth(); i++) {
                         for (int j = 0; j < croppedBackImageThreshold.getHeight(); j++) {
                             int pixel = croppedBackImageThreshold.getPixel(i,j);
@@ -126,15 +137,16 @@ public class StartActivity extends Activity{
                             }
                         }
                     }
-                   // if (!hasBackLight) {
-                   //     croppedBackImageThreshold = croppedBackImageRGB.copy(Bitmap.Config.RGB_565, true);
-                   //     croppedBackImageThreshold = getThresholdImage(croppedBackImageThreshold, 100);
-                   // }
+                    if (!hasBackLight) {
+                        croppedBackImageThreshold = croppedBackImageRGB.copy(Bitmap.Config.RGB_565, true);
+                        croppedBackImageThreshold = getThresholdImage(croppedBackImageThreshold, 100);
+                    }*/
 
 
                     croppedGrayImage = grayscaleImage(croppedSnapshotImageRGB);
                     storeImage(croppedFaceBitmap,2);
                     detectFace(iv);
+
                 }
                 safeToDetectFace = true;
                 safeToTakePicture = false;
@@ -149,24 +161,151 @@ public class StartActivity extends Activity{
         }
     };
 
+    public int[] getAzimuthElevationFromPattern(String input, Pattern pattern) {
+        Matcher m = pattern.matcher(input);
+
+        int[] vals = new int[4];
+        if (m.find()) {
+            vals[0] = Integer.parseInt(m.group(1)); // az1
+            vals[1] = Integer.parseInt(m.group(2)); // el1
+            vals[2] = Integer.parseInt(m.group(3)); // az2
+            vals[3] = Integer.parseInt(m.group(4)); // el2
+        } else {
+
+            Log.w("Regex","No Match!");
+        }
+        return vals;
+    }
+
+    public String getBestMatch(Bitmap image1, String folderName) {
+        AssetManager am = getAssets();
+        try {
+            int bestScore = 0;
+            String fileName = "";
+            String[] files = am.list(folderName);
+            InputStream inputFile = null;
+            String file = "";
+            for (int i = 0; i < files.length - 1; i++) {
+                file = files[i];
+                inputFile = getAssets().open("targets/" + file);
+                Bitmap image2 = BitmapFactory.decodeStream(inputFile);
+                int score = 0;
+                for (int x = 0; x < image2.getWidth(); x++) {
+                    for (int y = 0; y < image2.getHeight(); y++) {
+                        int pixel1 = image1.getPixel(x, y);
+                        int pixel2 = image2.getPixel(x, y);
+                        int red1 = (pixel1 & 0xff0000) >> 16;
+                        int red2 = (pixel2 & 0xff0000) >> 16;
+                        if (red1 == red2) {
+                            score++;
+                        }
+                    }
+                }
+                if (score > bestScore) {
+                    bestScore = score;
+                    fileName = file;
+                }
+            }
+            Log.w("best match", String.valueOf(bestScore));
+            Log.w("best match file", fileName);
+        } catch (IOException e) {
+
+        }
+        return null;
+    }
+
+    private Bitmap scaleImage(Bitmap bitmap, Point centerS, float eyedistS, Point centerT, float eyedistT) {
+        float ratio = (float) eyedistT / eyedistS;
+        int width = (int) (ratio * bitmap.getWidth());
+        int height = (int) (ratio * bitmap.getHeight());
+        bitmap = Bitmap.createScaledBitmap(bitmap, width, height, true);
+        centerS.x = (int) ( centerS.x * ratio);
+        centerS.y = (int) ( centerS.y * ratio);
+        int w = 168;
+        int h = 192;
+        Bitmap transformedBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565); // this creates a MUTABLE bitmap
+        for (int i = 0; i < transformedBitmap.getWidth(); i++) {
+            for (int j = 0; j < transformedBitmap.getHeight(); j++) {
+                int newI = centerS.x - centerT.x + i;
+                int newJ = centerS.y - centerT.y + j;
+                int pixel = bitmap.getPixel(newI, newJ);
+                transformedBitmap.setPixel(i,j,pixel);
+            }
+        }
+        Log.w("threshold",String.valueOf(ratio));
+        return transformedBitmap;
+    }
+
+    private int getOverallBrightnessMean(Bitmap bitmap, Point centerTop, float eyedist) {
+        int avgBrightness = 0;
+        int sumColor = 0;
+        int count = 0;
+        for (int i = 0; i < bitmap.getWidth(); i++) {
+            for (int j = 0; j < bitmap.getHeight(); j++) {
+                int pixel = bitmap.getPixel(i,j);
+                sumColor += Color.red(pixel);
+                count++;
+            }
+        }
+        avgBrightness = sumColor/count;
+        return avgBrightness;
+    }
+
+    private Bitmap getFaceLightThresholdMask(Bitmap bitmap, int brightness) {
+        Bitmap maskImage = bitmap.copy(Bitmap.Config.RGB_565, true);
+        int width = maskImage.getWidth();
+        int height = maskImage.getHeight();
+        int white = 0xffffff;
+        int lgray = 0xcccccc;
+        int gray = 0x888888;
+        int dgray = 0x444444;
+        int black = 0x000000;
+        int lowerHalf = brightness/5;
+        int upperHalf = (255 - brightness)/5;
+        Log.w("brightness", String.valueOf(brightness));
+        Log.w("brightness", String.valueOf(lowerHalf));
+        Log.w("brightness", String.valueOf(upperHalf));
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                int pixel = maskImage.getPixel(i,j);
+                int red = Color.red(pixel);
+                if (red <= lowerHalf*2) {
+                    maskImage.setPixel(i,j,black);
+                } else if (red <= lowerHalf*4) {
+                    maskImage.setPixel(i,j,dgray);
+                } else if (red <= brightness + upperHalf) {
+                    maskImage.setPixel(i,j,gray);
+                } else if (red <= brightness + upperHalf*3) {
+                    maskImage.setPixel(i,j,lgray);
+                } else {
+                    maskImage.setPixel(i,j,white);
+                }
+            }
+        }
+        return maskImage;
+    }
+
     private void getBackgroundMask(Bitmap bitmap, int left, int right, int bottom) {
-        for (int i = 0; i < previewImageSnapshot.getWidth(); i++) {
-            for (int j = 0; j < previewImageSnapshot.getHeight(); j++) {
+        for (int i = 0; i < bitmap.getWidth(); i++) {
+            for (int j = 0; j < bitmap.getHeight(); j++) {
                 if ((i >= (left - (right - left)/5) &&
                         i <= (right - (right - left)/5)) ||
                         j >= bottom) {
-                    int pixel = croppedBackImageRGB.getPixel(i,j);
                     int maskVal = 0x000000;
-                    croppedBackImageRGB.setPixel(i,j, maskVal);
+                    bitmap.setPixel(i,j, maskVal);
                 }
             }
         }
     }
 
-    private Bitmap getThresholdImage(Bitmap image, int threshold) {
-        for (int i = 0; i < image.getWidth(); i++) {
-            for (int j = 0; j < image.getHeight(); j++) {
-                int pixel = image.getPixel(i,j);
+    private void getThresholdImage(Bitmap image, int threshold) {
+        int width = image.getWidth();
+        int height = image.getHeight();
+        int[] pixels = new int[width*height];
+        image.getPixels(pixels, 0,width,0,0,width,height);
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+                int pixel = pixels[j*width + i];
                 int grayVal = (Color.red(pixel) + Color.green(pixel) + Color.blue(pixel))/3;
                 if (grayVal > threshold) {
                     image.setPixel(i,j, 0xFFFFFF);
@@ -176,7 +315,8 @@ public class StartActivity extends Activity{
 
             }
         }
-        return image;
+        Log.w("threshold","got this far");
+        //return image;
     }
 
     private int[] getBackgroundLightColorAndPos(Bitmap imageMask, Bitmap imageRGB) {
@@ -278,14 +418,27 @@ public class StartActivity extends Activity{
             ambientVals[0] = ambientVal1;
             ambientVals[1] = ambientVal2;
             int[] backLight = getBackgroundLightColorAndPos(croppedBackImageThreshold, croppedBackImageRGB);
-            encodedVals = encodeValues(noseRegionVals, foreheadRegionVals, cheekRegionVals,
-                    lightColors, ambientVal, ambientVals, backLight);
 
             Log.w("highlights", String.valueOf(highlight1));
             Log.w("highlights", String.valueOf(highlight2));
             Log.w("highlights", String.valueOf(highlight3));
             Log.w("highlights", String.valueOf(highlight4));
             Log.w("highlights", String.valueOf(highlight5));
+
+            Point targetCenter = new Point(81,41);
+            float targetEyeDist = 94f;
+            Bitmap scaledToRef = scaleImage(croppedGrayImage,localEyesCenter,eyedist,targetCenter,targetEyeDist);
+            int overallBrightnessMean = getOverallBrightnessMean(scaledToRef,localEyesCenter,eyedist);
+            Bitmap brightnessMask = getFaceLightThresholdMask(scaledToRef,overallBrightnessMean);
+            String bestMatchName = getBestMatch(scaledToRef, "targets/");
+            iv.setImageBitmap(brightnessMask);
+            storeImage(brightnessMask,4);
+
+            int[] azimuthElevationVals = getAzimuthElevationFromPattern(bestMatchName, PATTERN);
+
+            encodedVals = encodeValues(noseRegionVals, foreheadRegionVals, cheekRegionVals,
+                    lightColors, ambientVal, ambientVals, backLight, azimuthElevationVals);
+
             //mUnityPlayer.UnitySendMessage("CamTexture", "receiveLuminosityVals", encodedVals);
 
             // convert nose to small preview frame
@@ -310,7 +463,8 @@ public class StartActivity extends Activity{
     }
 
     private String encodeValues(
-            int[] nose, int[] forehead, int[] cheeks, int[] lightCols, int ambient, int[] ambVals, int[] backLight) {
+            int[] nose, int[] forehead, int[] cheeks, int[] lightCols,
+            int ambient, int[] ambVals, int[] backLight, int[] azel) {
         String out = "";
         for (int i = 0; i < nose.length; i++) {
             out += nose[i];
@@ -336,6 +490,10 @@ public class StartActivity extends Activity{
         }
         for (int i = 0; i < backLight.length; i++) {
             out += backLight[i];
+            out += ",";
+        }
+        for (int i = 0; i < azel.length; i++) {
+            out += azel[i];
             out += ",";
         }
         out = out.substring(0,out.length()-1);
