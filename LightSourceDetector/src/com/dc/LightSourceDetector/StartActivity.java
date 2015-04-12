@@ -83,9 +83,9 @@ public class StartActivity extends Activity{
     int  defaultCameraId;
     public boolean safeToTakePicture = false;
     public boolean safeToDetectFace = false;
-
+	
     private static final Pattern PATTERN = Pattern.compile("[0-9]+_bgw_yaleB[0-9]+_P00A(.{1}[0-9]+)E(.{1}[0-9]+)&bgw_yaleB[0-9]+_P00A(.{1}[0-9]+)E(.{1}[0-9]+).*");
-
+	
     private Handler takePictureHandler;
     public Runnable updateFacePicture = new Runnable()
     {
