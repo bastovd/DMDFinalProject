@@ -83,9 +83,9 @@ public class StartActivity extends Activity{
     int  defaultCameraId;
     public boolean safeToTakePicture = false;
     public boolean safeToDetectFace = false;
-	
+
     private static final Pattern PATTERN = Pattern.compile("[0-9]+_bgw_yaleB[0-9]+_P00A(.{1}[0-9]+)E(.{1}[0-9]+)&bgw_yaleB[0-9]+_P00A(.{1}[0-9]+)E(.{1}[0-9]+).*");
-	
+
     private Handler takePictureHandler;
     public Runnable updateFacePicture = new Runnable()
     {
@@ -162,14 +162,22 @@ public class StartActivity extends Activity{
     };
 
     public int[] getAzimuthElevationFromPattern(String input, Pattern pattern) {
-        Matcher m = pattern.matcher(input);
+       Matcher m = pattern.matcher(input);
 
         int[] vals = new int[4];
         if (m.find()) {
-            vals[0] = Integer.parseInt(m.group(1)); // az1
-            vals[1] = Integer.parseInt(m.group(2)); // el1
-            vals[2] = Integer.parseInt(m.group(3)); // az2
-            vals[3] = Integer.parseInt(m.group(4)); // el2
+            String m1 = m.group(1);
+            String m2 = m.group(2);
+            String m3 = m.group(3);
+            String m4 = m.group(4);
+            if (m1.charAt(0) == '+') m1 = m1.substring(1,4);
+            if (m2.charAt(0) == '+') m2 = m2.substring(1,3);
+            if (m3.charAt(0) == '+') m3 = m3.substring(1,4);
+            if (m4.charAt(0) == '+') m4 = m4.substring(1,3);
+            vals[0] = Integer.parseInt(m1); // az1
+            vals[1] = Integer.parseInt(m2); // el1
+            vals[2] = Integer.parseInt(m3); // az2
+            vals[3] = Integer.parseInt(m4); // el2
         } else {
 
             Log.w("Regex","No Match!");
@@ -196,7 +204,13 @@ public class StartActivity extends Activity{
                         int pixel2 = image2.getPixel(x, y);
                         int red1 = (pixel1 & 0xff0000) >> 16;
                         int red2 = (pixel2 & 0xff0000) >> 16;
-                        if (red1 == red2) {
+                        //Log.w("red1", String.valueOf(red1));
+                        //Log.w("red2", String.valueOf(red2));
+                        if ((red1 == 0 && red2 == 0) ||
+                                ((red1 == 66 || red1 == 74) && red2 == 15) ||
+                                ((red1 == 132 || red1 == 140) && red2 == 63) ||
+                                ((red1 == 198 || red1 == 206) && red2 == 154) ||
+                                (red1 == 255 && red2 == 255)) {
                             score++;
                         }
                     }
@@ -208,8 +222,9 @@ public class StartActivity extends Activity{
             }
             Log.w("best match", String.valueOf(bestScore));
             Log.w("best match file", fileName);
+            return fileName;
         } catch (IOException e) {
-
+            Log.w("best match error", "couldn't open file");
         }
         return null;
     }
@@ -236,22 +251,31 @@ public class StartActivity extends Activity{
         return transformedBitmap;
     }
 
-    private int getOverallBrightnessMean(Bitmap bitmap, Point centerTop, float eyedist) {
+    private int[] getOverallBrightnessMean(Bitmap bitmap) {
         int avgBrightness = 0;
         int sumColor = 0;
         int count = 0;
+        int minBrightness = 255;
+        int maxBrightness = 0;
         for (int i = 0; i < bitmap.getWidth(); i++) {
             for (int j = 0; j < bitmap.getHeight(); j++) {
                 int pixel = bitmap.getPixel(i,j);
-                sumColor += Color.red(pixel);
+                int red = Color.red(pixel);
+                sumColor += red;
                 count++;
+                if (red > maxBrightness) maxBrightness = red;
+                if (red < minBrightness) minBrightness = red;
             }
         }
         avgBrightness = sumColor/count;
-        return avgBrightness;
+        int[] brightnessVals = new int[3];
+        brightnessVals[0] = avgBrightness;
+        brightnessVals[1] = minBrightness;
+        brightnessVals[2] = maxBrightness;
+        return brightnessVals;
     }
 
-    private Bitmap getFaceLightThresholdMask(Bitmap bitmap, int brightness) {
+    private Bitmap getFaceLightThresholdMask(Bitmap bitmap, int[] brightness) {
         Bitmap maskImage = bitmap.copy(Bitmap.Config.RGB_565, true);
         int width = maskImage.getWidth();
         int height = maskImage.getHeight();
@@ -260,8 +284,8 @@ public class StartActivity extends Activity{
         int gray = 0x888888;
         int dgray = 0x444444;
         int black = 0x000000;
-        int lowerHalf = brightness/5;
-        int upperHalf = (255 - brightness)/5;
+        int lowerHalf = (brightness[0] - brightness[1])/5;
+        int upperHalf = (brightness[2] - brightness[0])/5;
         Log.w("brightness", String.valueOf(brightness));
         Log.w("brightness", String.valueOf(lowerHalf));
         Log.w("brightness", String.valueOf(upperHalf));
@@ -269,13 +293,13 @@ public class StartActivity extends Activity{
             for (int j = 0; j < height; j++) {
                 int pixel = maskImage.getPixel(i,j);
                 int red = Color.red(pixel);
-                if (red <= lowerHalf*2) {
+                if (red <= brightness[1] + lowerHalf*2) {
                     maskImage.setPixel(i,j,black);
-                } else if (red <= lowerHalf*4) {
+                } else if (red <= brightness[1] + lowerHalf*4) {
                     maskImage.setPixel(i,j,dgray);
-                } else if (red <= brightness + upperHalf) {
+                } else if (red <= brightness[0] + upperHalf) {
                     maskImage.setPixel(i,j,gray);
-                } else if (red <= brightness + upperHalf*3) {
+                } else if (red <= brightness[0] + upperHalf*3) {
                     maskImage.setPixel(i,j,lgray);
                 } else {
                     maskImage.setPixel(i,j,white);
@@ -428,11 +452,13 @@ public class StartActivity extends Activity{
             Point targetCenter = new Point(81,41);
             float targetEyeDist = 94f;
             Bitmap scaledToRef = scaleImage(croppedGrayImage,localEyesCenter,eyedist,targetCenter,targetEyeDist);
-            int overallBrightnessMean = getOverallBrightnessMean(scaledToRef,localEyesCenter,eyedist);
+            int[] overallBrightnessMean = getOverallBrightnessMean(scaledToRef);
             Bitmap brightnessMask = getFaceLightThresholdMask(scaledToRef,overallBrightnessMean);
-            String bestMatchName = getBestMatch(scaledToRef, "targets/");
+            storeImage(scaledToRef,4);
             iv.setImageBitmap(brightnessMask);
-            storeImage(brightnessMask,4);
+            storeImage(brightnessMask,5);
+
+            String bestMatchName = getBestMatch(brightnessMask, "targets");
 
             int[] azimuthElevationVals = getAzimuthElevationFromPattern(bestMatchName, PATTERN);
 

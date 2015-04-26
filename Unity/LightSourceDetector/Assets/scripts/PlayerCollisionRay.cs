@@ -17,19 +17,19 @@ public class PlayerCollisionRay : MonoBehaviour {
 		RaycastHit hit;
 		if (Physics.Raycast(ray, out hit)) {
 			if (hit.transform.tag == "targetSphere") {
-				//print ("I am looking at " + hit.transform.name);
+				print ("I am looking at " + hit.transform.name);
 				GameObject targetObj = GameObject.Find (hit.transform.name);
 				TargetSphere targetScript = targetObj.GetComponent<TargetSphere>();
 				int id = targetScript.m_Id;
-				for (int i = 0; i < Puzzle_Behavior.NUM_PUZZLES; i ++) {
-					GameObject controlPoint = GameObject.Find ("Point" + (i+1));
+				for (int i = 0; i < Levels.NUM_PUZZLES; i ++) {
+					GameObject controlPoint = GameObject.Find ("Point" + (int)(Levels.level+1) + "_" + (i+1));
 					ControlPoint pointScript = controlPoint.GetComponent<ControlPoint>();
 					if (pointScript.m_Id == id) {
 						float dist = Vector3.Distance(transform.position, controlPoint.transform.position);
 						if (dist <= pointScript.m_radius) {
 							print ("hit " + hit.transform.name);
 							int playerLoc = GameObject.Find ("Player").GetComponent<PlayerScript>().currLoc;
-							if (playerLoc < id) {
+							if (playerLoc == id) {
 								GameObject.Find ("Player").GetComponent<PlayerScript>().Progress();
 							}
 						}

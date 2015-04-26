@@ -1,0 +1,1670 @@
+fileFormatVersion: 2
+guid: 7a9e8fcad6af44c4fa8abfec22cb9bad
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: pCube5_girl001
+    100002: s_v_1
+    100004: s_v_10
+    100006: s_v_100
+    100008: s_v_101
+    100010: s_v_102
+    100012: s_v_103
+    100014: s_v_104
+    100016: s_v_105
+    100018: s_v_106
+    100020: s_v_107
+    100022: s_v_108
+    100024: s_v_109
+    100026: s_v_11
+    100028: s_v_110
+    100030: s_v_111
+    100032: s_v_112
+    100034: s_v_113
+    100036: s_v_114
+    100038: s_v_115
+    100040: s_v_116
+    100042: s_v_117
+    100044: s_v_118
+    100046: s_v_119
+    100048: s_v_12
+    100050: s_v_120
+    100052: s_v_121
+    100054: s_v_122
+    100056: s_v_123
+    100058: s_v_124
+    100060: s_v_125
+    100062: s_v_126
+    100064: s_v_127
+    100066: s_v_128
+    100068: s_v_129
+    100070: s_v_13
+    100072: s_v_130
+    100074: s_v_131
+    100076: s_v_132
+    100078: s_v_133
+    100080: s_v_134
+    100082: s_v_135
+    100084: s_v_136
+    100086: s_v_137
+    100088: s_v_138
+    100090: s_v_139
+    100092: s_v_14
+    100094: s_v_140
+    100096: s_v_141
+    100098: s_v_142
+    100100: s_v_143
+    100102: s_v_144
+    100104: s_v_145
+    100106: s_v_146
+    100108: s_v_147
+    100110: s_v_148
+    100112: s_v_149
+    100114: s_v_15
+    100116: s_v_150
+    100118: s_v_151
+    100120: s_v_152
+    100122: s_v_153
+    100124: s_v_154
+    100126: s_v_155
+    100128: s_v_156
+    100130: s_v_157
+    100132: s_v_158
+    100134: s_v_159
+    100136: s_v_16
+    100138: s_v_160
+    100140: s_v_161
+    100142: s_v_162
+    100144: s_v_163
+    100146: s_v_164
+    100148: s_v_165
+    100150: s_v_166
+    100152: s_v_167
+    100154: s_v_168
+    100156: s_v_169
+    100158: s_v_17
+    100160: s_v_170
+    100162: s_v_171
+    100164: s_v_172
+    100166: s_v_173
+    100168: s_v_174
+    100170: s_v_175
+    100172: s_v_176
+    100174: s_v_177
+    100176: s_v_178
+    100178: s_v_179
+    100180: s_v_18
+    100182: s_v_180
+    100184: s_v_181
+    100186: s_v_182
+    100188: s_v_183
+    100190: s_v_184
+    100192: s_v_185
+    100194: s_v_186
+    100196: s_v_187
+    100198: s_v_188
+    100200: s_v_189
+    100202: s_v_19
+    100204: s_v_190
+    100206: s_v_191
+    100208: s_v_192
+    100210: s_v_193
+    100212: s_v_194
+    100214: s_v_195
+    100216: s_v_196
+    100218: s_v_197
+    100220: s_v_198
+    100222: s_v_199
+    100224: s_v_2
+    100226: s_v_20
+    100228: s_v_200
+    100230: s_v_201
+    100232: s_v_202
+    100234: s_v_203
+    100236: s_v_204
+    100238: s_v_205
+    100240: s_v_206
+    100242: s_v_207
+    100244: s_v_208
+    100246: s_v_209
+    100248: s_v_21
+    100250: s_v_210
+    100252: s_v_211
+    100254: s_v_212
+    100256: s_v_213
+    100258: s_v_214
+    100260: s_v_215
+    100262: s_v_216
+    100264: s_v_217
+    100266: s_v_218
+    100268: s_v_219
+    100270: s_v_22
+    100272: s_v_220
+    100274: s_v_221
+    100276: s_v_222
+    100278: s_v_223
+    100280: s_v_224
+    100282: s_v_225
+    100284: s_v_226
+    100286: s_v_227
+    100288: s_v_228
+    100290: s_v_229
+    100292: s_v_23
+    100294: s_v_230
+    100296: s_v_231
+    100298: s_v_232
+    100300: s_v_233
+    100302: s_v_234
+    100304: s_v_235
+    100306: s_v_236
+    100308: s_v_237
+    100310: s_v_238
+    100312: s_v_239
+    100314: s_v_24
+    100316: s_v_240
+    100318: s_v_241
+    100320: s_v_242
+    100322: s_v_243
+    100324: s_v_244
+    100326: s_v_245
+    100328: s_v_246
+    100330: s_v_247
+    100332: s_v_248
+    100334: s_v_249
+    100336: s_v_25
+    100338: s_v_250
+    100340: s_v_251
+    100342: s_v_252
+    100344: s_v_253
+    100346: s_v_254
+    100348: s_v_255
+    100350: s_v_256
+    100352: s_v_257
+    100354: s_v_258
+    100356: s_v_259
+    100358: s_v_26
+    100360: s_v_260
+    100362: s_v_261
+    100364: s_v_262
+    100366: s_v_263
+    100368: s_v_264
+    100370: s_v_265
+    100372: s_v_266
+    100374: s_v_267
+    100376: s_v_268
+    100378: s_v_269
+    100380: s_v_27
+    100382: s_v_270
+    100384: s_v_271
+    100386: s_v_272
+    100388: s_v_273
+    100390: s_v_274
+    100392: s_v_275
+    100394: s_v_276
+    100396: s_v_277
+    100398: s_v_278
+    100400: s_v_279
+    100402: s_v_28
+    100404: s_v_280
+    100406: s_v_281
+    100408: s_v_282
+    100410: s_v_283
+    100412: s_v_284
+    100414: s_v_285
+    100416: s_v_286
+    100418: s_v_287
+    100420: s_v_288
+    100422: s_v_289
+    100424: s_v_29
+    100426: s_v_290
+    100428: s_v_291
+    100430: s_v_292
+    100432: s_v_293
+    100434: s_v_294
+    100436: s_v_295
+    100438: s_v_296
+    100440: s_v_297
+    100442: s_v_298
+    100444: s_v_299
+    100446: s_v_3
+    100448: s_v_30
+    100450: s_v_300
+    100452: s_v_301
+    100454: s_v_302
+    100456: s_v_303
+    100458: s_v_304
+    100460: s_v_305
+    100462: s_v_306
+    100464: s_v_307
+    100466: s_v_308
+    100468: s_v_309
+    100470: s_v_31
+    100472: s_v_310
+    100474: s_v_311
+    100476: s_v_312
+    100478: s_v_313
+    100480: s_v_314
+    100482: s_v_315
+    100484: s_v_316
+    100486: s_v_317
+    100488: s_v_318
+    100490: s_v_319
+    100492: s_v_32
+    100494: s_v_320
+    100496: s_v_321
+    100498: s_v_322
+    100500: s_v_323
+    100502: s_v_324
+    100504: s_v_325
+    100506: s_v_326
+    100508: s_v_327
+    100510: s_v_328
+    100512: s_v_329
+    100514: s_v_33
+    100516: s_v_330
+    100518: s_v_331
+    100520: s_v_332
+    100522: s_v_333
+    100524: s_v_334
+    100526: s_v_335
+    100528: s_v_336
+    100530: s_v_337
+    100532: s_v_338
+    100534: s_v_339
+    100536: s_v_34
+    100538: s_v_340
+    100540: s_v_341
+    100542: s_v_342
+    100544: s_v_343
+    100546: s_v_344
+    100548: s_v_345
+    100550: s_v_346
+    100552: s_v_347
+    100554: s_v_348
+    100556: s_v_349
+    100558: s_v_35
+    100560: s_v_350
+    100562: s_v_351
+    100564: s_v_352
+    100566: s_v_353
+    100568: s_v_354
+    100570: s_v_355
+    100572: s_v_356
+    100574: s_v_357
+    100576: s_v_358
+    100578: s_v_359
+    100580: s_v_36
+    100582: s_v_360
+    100584: s_v_361
+    100586: s_v_362
+    100588: s_v_363
+    100590: s_v_364
+    100592: s_v_365
+    100594: s_v_366
+    100596: s_v_367
+    100598: s_v_368
+    100600: s_v_369
+    100602: s_v_37
+    100604: s_v_370
+    100606: s_v_371
+    100608: s_v_372
+    100610: s_v_373
+    100612: s_v_374
+    100614: s_v_375
+    100616: s_v_376
+    100618: s_v_377
+    100620: s_v_378
+    100622: s_v_379
+    100624: s_v_38
+    100626: s_v_380
+    100628: s_v_381
+    100630: s_v_382
+    100632: s_v_383
+    100634: s_v_384
+    100636: s_v_385
+    100638: s_v_386
+    100640: s_v_387
+    100642: s_v_388
+    100644: s_v_389
+    100646: s_v_39
+    100648: s_v_390
+    100650: s_v_391
+    100652: s_v_392
+    100654: s_v_393
+    100656: s_v_4
+    100658: s_v_40
+    100660: s_v_41
+    100662: s_v_42
+    100664: s_v_43
+    100666: s_v_44
+    100668: s_v_45
+    100670: s_v_46
+    100672: s_v_47
+    100674: s_v_48
+    100676: s_v_49
+    100678: s_v_5
+    100680: s_v_50
+    100682: s_v_51
+    100684: s_v_52
+    100686: s_v_53
+    100688: s_v_54
+    100690: s_v_55
+    100692: s_v_56
+    100694: s_v_57
+    100696: s_v_58
+    100698: s_v_59
+    100700: s_v_6
+    100702: s_v_60
+    100704: s_v_61
+    100706: s_v_62
+    100708: s_v_63
+    100710: s_v_64
+    100712: s_v_65
+    100714: s_v_66
+    100716: s_v_67
+    100718: s_v_68
+    100720: s_v_69
+    100722: s_v_7
+    100724: s_v_70
+    100726: s_v_71
+    100728: s_v_72
+    100730: s_v_73
+    100732: s_v_74
+    100734: s_v_75
+    100736: s_v_76
+    100738: s_v_77
+    100740: s_v_78
+    100742: s_v_79
+    100744: s_v_8
+    100746: s_v_80
+    100748: s_v_81
+    100750: s_v_82
+    100752: s_v_83
+    100754: s_v_84
+    100756: s_v_85
+    100758: s_v_86
+    100760: s_v_87
+    100762: s_v_88
+    100764: s_v_89
+    100766: s_v_9
+    100768: s_v_90
+    100770: s_v_91
+    100772: s_v_92
+    100774: s_v_93
+    100776: s_v_94
+    100778: s_v_95
+    100780: s_v_96
+    100782: s_v_97
+    100784: s_v_98
+    100786: s_v_99
+    100788: //RootNode
+    400000: pCube5_girl001
+    400002: s_v_1
+    400004: s_v_10
+    400006: s_v_100
+    400008: s_v_101
+    400010: s_v_102
+    400012: s_v_103
+    400014: s_v_104
+    400016: s_v_105
+    400018: s_v_106
+    400020: s_v_107
+    400022: s_v_108
+    400024: s_v_109
+    400026: s_v_11
+    400028: s_v_110
+    400030: s_v_111
+    400032: s_v_112
+    400034: s_v_113
+    400036: s_v_114
+    400038: s_v_115
+    400040: s_v_116
+    400042: s_v_117
+    400044: s_v_118
+    400046: s_v_119
+    400048: s_v_12
+    400050: s_v_120
+    400052: s_v_121
+    400054: s_v_122
+    400056: s_v_123
+    400058: s_v_124
+    400060: s_v_125
+    400062: s_v_126
+    400064: s_v_127
+    400066: s_v_128
+    400068: s_v_129
+    400070: s_v_13
+    400072: s_v_130
+    400074: s_v_131
+    400076: s_v_132
+    400078: s_v_133
+    400080: s_v_134
+    400082: s_v_135
+    400084: s_v_136
+    400086: s_v_137
+    400088: s_v_138
+    400090: s_v_139
+    400092: s_v_14
+    400094: s_v_140
+    400096: s_v_141
+    400098: s_v_142
+    400100: s_v_143
+    400102: s_v_144
+    400104: s_v_145
+    400106: s_v_146
+    400108: s_v_147
+    400110: s_v_148
+    400112: s_v_149
+    400114: s_v_15
+    400116: s_v_150
+    400118: s_v_151
+    400120: s_v_152
+    400122: s_v_153
+    400124: s_v_154
+    400126: s_v_155
+    400128: s_v_156
+    400130: s_v_157
+    400132: s_v_158
+    400134: s_v_159
+    400136: s_v_16
+    400138: s_v_160
+    400140: s_v_161
+    400142: s_v_162
+    400144: s_v_163
+    400146: s_v_164
+    400148: s_v_165
+    400150: s_v_166
+    400152: s_v_167
+    400154: s_v_168
+    400156: s_v_169
+    400158: s_v_17
+    400160: s_v_170
+    400162: s_v_171
+    400164: s_v_172
+    400166: s_v_173
+    400168: s_v_174
+    400170: s_v_175
+    400172: s_v_176
+    400174: s_v_177
+    400176: s_v_178
+    400178: s_v_179
+    400180: s_v_18
+    400182: s_v_180
+    400184: s_v_181
+    400186: s_v_182
+    400188: s_v_183
+    400190: s_v_184
+    400192: s_v_185
+    400194: s_v_186
+    400196: s_v_187
+    400198: s_v_188
+    400200: s_v_189
+    400202: s_v_19
+    400204: s_v_190
+    400206: s_v_191
+    400208: s_v_192
+    400210: s_v_193
+    400212: s_v_194
+    400214: s_v_195
+    400216: s_v_196
+    400218: s_v_197
+    400220: s_v_198
+    400222: s_v_199
+    400224: s_v_2
+    400226: s_v_20
+    400228: s_v_200
+    400230: s_v_201
+    400232: s_v_202
+    400234: s_v_203
+    400236: s_v_204
+    400238: s_v_205
+    400240: s_v_206
+    400242: s_v_207
+    400244: s_v_208
+    400246: s_v_209
+    400248: s_v_21
+    400250: s_v_210
+    400252: s_v_211
+    400254: s_v_212
+    400256: s_v_213
+    400258: s_v_214
+    400260: s_v_215
+    400262: s_v_216
+    400264: s_v_217
+    400266: s_v_218
+    400268: s_v_219
+    400270: s_v_22
+    400272: s_v_220
+    400274: s_v_221
+    400276: s_v_222
+    400278: s_v_223
+    400280: s_v_224
+    400282: s_v_225
+    400284: s_v_226
+    400286: s_v_227
+    400288: s_v_228
+    400290: s_v_229
+    400292: s_v_23
+    400294: s_v_230
+    400296: s_v_231
+    400298: s_v_232
+    400300: s_v_233
+    400302: s_v_234
+    400304: s_v_235
+    400306: s_v_236
+    400308: s_v_237
+    400310: s_v_238
+    400312: s_v_239
+    400314: s_v_24
+    400316: s_v_240
+    400318: s_v_241
+    400320: s_v_242
+    400322: s_v_243
+    400324: s_v_244
+    400326: s_v_245
+    400328: s_v_246
+    400330: s_v_247
+    400332: s_v_248
+    400334: s_v_249
+    400336: s_v_25
+    400338: s_v_250
+    400340: s_v_251
+    400342: s_v_252
+    400344: s_v_253
+    400346: s_v_254
+    400348: s_v_255
+    400350: s_v_256
+    400352: s_v_257
+    400354: s_v_258
+    400356: s_v_259
+    400358: s_v_26
+    400360: s_v_260
+    400362: s_v_261
+    400364: s_v_262
+    400366: s_v_263
+    400368: s_v_264
+    400370: s_v_265
+    400372: s_v_266
+    400374: s_v_267
+    400376: s_v_268
+    400378: s_v_269
+    400380: s_v_27
+    400382: s_v_270
+    400384: s_v_271
+    400386: s_v_272
+    400388: s_v_273
+    400390: s_v_274
+    400392: s_v_275
+    400394: s_v_276
+    400396: s_v_277
+    400398: s_v_278
+    400400: s_v_279
+    400402: s_v_28
+    400404: s_v_280
+    400406: s_v_281
+    400408: s_v_282
+    400410: s_v_283
+    400412: s_v_284
+    400414: s_v_285
+    400416: s_v_286
+    400418: s_v_287
+    400420: s_v_288
+    400422: s_v_289
+    400424: s_v_29
+    400426: s_v_290
+    400428: s_v_291
+    400430: s_v_292
+    400432: s_v_293
+    400434: s_v_294
+    400436: s_v_295
+    400438: s_v_296
+    400440: s_v_297
+    400442: s_v_298
+    400444: s_v_299
+    400446: s_v_3
+    400448: s_v_30
+    400450: s_v_300
+    400452: s_v_301
+    400454: s_v_302
+    400456: s_v_303
+    400458: s_v_304
+    400460: s_v_305
+    400462: s_v_306
+    400464: s_v_307
+    400466: s_v_308
+    400468: s_v_309
+    400470: s_v_31
+    400472: s_v_310
+    400474: s_v_311
+    400476: s_v_312
+    400478: s_v_313
+    400480: s_v_314
+    400482: s_v_315
+    400484: s_v_316
+    400486: s_v_317
+    400488: s_v_318
+    400490: s_v_319
+    400492: s_v_32
+    400494: s_v_320
+    400496: s_v_321
+    400498: s_v_322
+    400500: s_v_323
+    400502: s_v_324
+    400504: s_v_325
+    400506: s_v_326
+    400508: s_v_327
+    400510: s_v_328
+    400512: s_v_329
+    400514: s_v_33
+    400516: s_v_330
+    400518: s_v_331
+    400520: s_v_332
+    400522: s_v_333
+    400524: s_v_334
+    400526: s_v_335
+    400528: s_v_336
+    400530: s_v_337
+    400532: s_v_338
+    400534: s_v_339
+    400536: s_v_34
+    400538: s_v_340
+    400540: s_v_341
+    400542: s_v_342
+    400544: s_v_343
+    400546: s_v_344
+    400548: s_v_345
+    400550: s_v_346
+    400552: s_v_347
+    400554: s_v_348
+    400556: s_v_349
+    400558: s_v_35
+    400560: s_v_350
+    400562: s_v_351
+    400564: s_v_352
+    400566: s_v_353
+    400568: s_v_354
+    400570: s_v_355
+    400572: s_v_356
+    400574: s_v_357
+    400576: s_v_358
+    400578: s_v_359
+    400580: s_v_36
+    400582: s_v_360
+    400584: s_v_361
+    400586: s_v_362
+    400588: s_v_363
+    400590: s_v_364
+    400592: s_v_365
+    400594: s_v_366
+    400596: s_v_367
+    400598: s_v_368
+    400600: s_v_369
+    400602: s_v_37
+    400604: s_v_370
+    400606: s_v_371
+    400608: s_v_372
+    400610: s_v_373
+    400612: s_v_374
+    400614: s_v_375
+    400616: s_v_376
+    400618: s_v_377
+    400620: s_v_378
+    400622: s_v_379
+    400624: s_v_38
+    400626: s_v_380
+    400628: s_v_381
+    400630: s_v_382
+    400632: s_v_383
+    400634: s_v_384
+    400636: s_v_385
+    400638: s_v_386
+    400640: s_v_387
+    400642: s_v_388
+    400644: s_v_389
+    400646: s_v_39
+    400648: s_v_390
+    400650: s_v_391
+    400652: s_v_392
+    400654: s_v_393
+    400656: s_v_4
+    400658: s_v_40
+    400660: s_v_41
+    400662: s_v_42
+    400664: s_v_43
+    400666: s_v_44
+    400668: s_v_45
+    400670: s_v_46
+    400672: s_v_47
+    400674: s_v_48
+    400676: s_v_49
+    400678: s_v_5
+    400680: s_v_50
+    400682: s_v_51
+    400684: s_v_52
+    400686: s_v_53
+    400688: s_v_54
+    400690: s_v_55
+    400692: s_v_56
+    400694: s_v_57
+    400696: s_v_58
+    400698: s_v_59
+    400700: s_v_6
+    400702: s_v_60
+    400704: s_v_61
+    400706: s_v_62
+    400708: s_v_63
+    400710: s_v_64
+    400712: s_v_65
+    400714: s_v_66
+    400716: s_v_67
+    400718: s_v_68
+    400720: s_v_69
+    400722: s_v_7
+    400724: s_v_70
+    400726: s_v_71
+    400728: s_v_72
+    400730: s_v_73
+    400732: s_v_74
+    400734: s_v_75
+    400736: s_v_76
+    400738: s_v_77
+    400740: s_v_78
+    400742: s_v_79
+    400744: s_v_8
+    400746: s_v_80
+    400748: s_v_81
+    400750: s_v_82
+    400752: s_v_83
+    400754: s_v_84
+    400756: s_v_85
+    400758: s_v_86
+    400760: s_v_87
+    400762: s_v_88
+    400764: s_v_89
+    400766: s_v_9
+    400768: s_v_90
+    400770: s_v_91
+    400772: s_v_92
+    400774: s_v_93
+    400776: s_v_94
+    400778: s_v_95
+    400780: s_v_96
+    400782: s_v_97
+    400784: s_v_98
+    400786: s_v_99
+    400788: //RootNode
+    4300000: pCube5_girl001
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: pCube5_girl001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 52
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: pCube5_girl001
+        weight: 1
+      - path: s_v_1
+        weight: 1
+      - path: s_v_2
+        weight: 1
+      - path: s_v_3
+        weight: 1
+      - path: s_v_4
+        weight: 1
+      - path: s_v_5
+        weight: 1
+      - path: s_v_6
+        weight: 1
+      - path: s_v_7
+        weight: 1
+      - path: s_v_8
+        weight: 1
+      - path: s_v_9
+        weight: 1
+      - path: s_v_10
+        weight: 1
+      - path: s_v_11
+        weight: 1
+      - path: s_v_12
+        weight: 1
+      - path: s_v_13
+        weight: 1
+      - path: s_v_14
+        weight: 1
+      - path: s_v_15
+        weight: 1
+      - path: s_v_16
+        weight: 1
+      - path: s_v_17
+        weight: 1
+      - path: s_v_18
+        weight: 1
+      - path: s_v_19
+        weight: 1
+      - path: s_v_20
+        weight: 1
+      - path: s_v_21
+        weight: 1
+      - path: s_v_22
+        weight: 1
+      - path: s_v_23
+        weight: 1
+      - path: s_v_24
+        weight: 1
+      - path: s_v_25
+        weight: 1
+      - path: s_v_26
+        weight: 1
+      - path: s_v_27
+        weight: 1
+      - path: s_v_28
+        weight: 1
+      - path: s_v_29
+        weight: 1
+      - path: s_v_30
+        weight: 1
+      - path: s_v_31
+        weight: 1
+      - path: s_v_32
+        weight: 1
+      - path: s_v_33
+        weight: 1
+      - path: s_v_34
+        weight: 1
+      - path: s_v_35
+        weight: 1
+      - path: s_v_36
+        weight: 1
+      - path: s_v_37
+        weight: 1
+      - path: s_v_38
+        weight: 1
+      - path: s_v_39
+        weight: 1
+      - path: s_v_40
+        weight: 1
+      - path: s_v_41
+        weight: 1
+      - path: s_v_42
+        weight: 1
+      - path: s_v_43
+        weight: 1
+      - path: s_v_44
+        weight: 1
+      - path: s_v_45
+        weight: 1
+      - path: s_v_46
+        weight: 1
+      - path: s_v_47
+        weight: 1
+      - path: s_v_48
+        weight: 1
+      - path: s_v_49
+        weight: 1
+      - path: s_v_50
+        weight: 1
+      - path: s_v_51
+        weight: 1
+      - path: s_v_52
+        weight: 1
+      - path: s_v_53
+        weight: 1
+      - path: s_v_54
+        weight: 1
+      - path: s_v_55
+        weight: 1
+      - path: s_v_56
+        weight: 1
+      - path: s_v_57
+        weight: 1
+      - path: s_v_58
+        weight: 1
+      - path: s_v_59
+        weight: 1
+      - path: s_v_60
+        weight: 1
+      - path: s_v_61
+        weight: 1
+      - path: s_v_62
+        weight: 1
+      - path: s_v_63
+        weight: 1
+      - path: s_v_64
+        weight: 1
+      - path: s_v_65
+        weight: 1
+      - path: s_v_66
+        weight: 1
+      - path: s_v_67
+        weight: 1
+      - path: s_v_68
+        weight: 1
+      - path: s_v_69
+        weight: 1
+      - path: s_v_70
+        weight: 1
+      - path: s_v_71
+        weight: 1
+      - path: s_v_72
+        weight: 1
+      - path: s_v_73
+        weight: 1
+      - path: s_v_74
+        weight: 1
+      - path: s_v_75
+        weight: 1
+      - path: s_v_76
+        weight: 1
+      - path: s_v_77
+        weight: 1
+      - path: s_v_78
+        weight: 1
+      - path: s_v_79
+        weight: 1
+      - path: s_v_80
+        weight: 1
+      - path: s_v_81
+        weight: 1
+      - path: s_v_82
+        weight: 1
+      - path: s_v_83
+        weight: 1
+      - path: s_v_84
+        weight: 1
+      - path: s_v_85
+        weight: 1
+      - path: s_v_86
+        weight: 1
+      - path: s_v_87
+        weight: 1
+      - path: s_v_88
+        weight: 1
+      - path: s_v_89
+        weight: 1
+      - path: s_v_90
+        weight: 1
+      - path: s_v_91
+        weight: 1
+      - path: s_v_92
+        weight: 1
+      - path: s_v_93
+        weight: 1
+      - path: s_v_94
+        weight: 1
+      - path: s_v_95
+        weight: 1
+      - path: s_v_96
+        weight: 1
+      - path: s_v_97
+        weight: 1
+      - path: s_v_98
+        weight: 1
+      - path: s_v_99
+        weight: 1
+      - path: s_v_100
+        weight: 1
+      - path: s_v_101
+        weight: 1
+      - path: s_v_102
+        weight: 1
+      - path: s_v_103
+        weight: 1
+      - path: s_v_104
+        weight: 1
+      - path: s_v_105
+        weight: 1
+      - path: s_v_106
+        weight: 1
+      - path: s_v_107
+        weight: 1
+      - path: s_v_108
+        weight: 1
+      - path: s_v_109
+        weight: 1
+      - path: s_v_110
+        weight: 1
+      - path: s_v_111
+        weight: 1
+      - path: s_v_112
+        weight: 1
+      - path: s_v_113
+        weight: 1
+      - path: s_v_114
+        weight: 1
+      - path: s_v_115
+        weight: 1
+      - path: s_v_116
+        weight: 1
+      - path: s_v_117
+        weight: 1
+      - path: s_v_118
+        weight: 1
+      - path: s_v_119
+        weight: 1
+      - path: s_v_120
+        weight: 1
+      - path: s_v_121
+        weight: 1
+      - path: s_v_122
+        weight: 1
+      - path: s_v_123
+        weight: 1
+      - path: s_v_124
+        weight: 1
+      - path: s_v_125
+        weight: 1
+      - path: s_v_126
+        weight: 1
+      - path: s_v_127
+        weight: 1
+      - path: s_v_128
+        weight: 1
+      - path: s_v_129
+        weight: 1
+      - path: s_v_130
+        weight: 1
+      - path: s_v_131
+        weight: 1
+      - path: s_v_132
+        weight: 1
+      - path: s_v_133
+        weight: 1
+      - path: s_v_134
+        weight: 1
+      - path: s_v_135
+        weight: 1
+      - path: s_v_136
+        weight: 1
+      - path: s_v_137
+        weight: 1
+      - path: s_v_138
+        weight: 1
+      - path: s_v_139
+        weight: 1
+      - path: s_v_140
+        weight: 1
+      - path: s_v_141
+        weight: 1
+      - path: s_v_142
+        weight: 1
+      - path: s_v_143
+        weight: 1
+      - path: s_v_144
+        weight: 1
+      - path: s_v_145
+        weight: 1
+      - path: s_v_146
+        weight: 1
+      - path: s_v_147
+        weight: 1
+      - path: s_v_148
+        weight: 1
+      - path: s_v_149
+        weight: 1
+      - path: s_v_150
+        weight: 1
+      - path: s_v_151
+        weight: 1
+      - path: s_v_152
+        weight: 1
+      - path: s_v_153
+        weight: 1
+      - path: s_v_154
+        weight: 1
+      - path: s_v_155
+        weight: 1
+      - path: s_v_156
+        weight: 1
+      - path: s_v_157
+        weight: 1
+      - path: s_v_158
+        weight: 1
+      - path: s_v_159
+        weight: 1
+      - path: s_v_160
+        weight: 1
+      - path: s_v_161
+        weight: 1
+      - path: s_v_162
+        weight: 1
+      - path: s_v_163
+        weight: 1
+      - path: s_v_164
+        weight: 1
+      - path: s_v_165
+        weight: 1
+      - path: s_v_166
+        weight: 1
+      - path: s_v_167
+        weight: 1
+      - path: s_v_168
+        weight: 1
+      - path: s_v_169
+        weight: 1
+      - path: s_v_170
+        weight: 1
+      - path: s_v_171
+        weight: 1
+      - path: s_v_172
+        weight: 1
+      - path: s_v_173
+        weight: 1
+      - path: s_v_174
+        weight: 1
+      - path: s_v_175
+        weight: 1
+      - path: s_v_176
+        weight: 1
+      - path: s_v_177
+        weight: 1
+      - path: s_v_178
+        weight: 1
+      - path: s_v_179
+        weight: 1
+      - path: s_v_180
+        weight: 1
+      - path: s_v_181
+        weight: 1
+      - path: s_v_182
+        weight: 1
+      - path: s_v_183
+        weight: 1
+      - path: s_v_184
+        weight: 1
+      - path: s_v_185
+        weight: 1
+      - path: s_v_186
+        weight: 1
+      - path: s_v_187
+        weight: 1
+      - path: s_v_188
+        weight: 1
+      - path: s_v_189
+        weight: 1
+      - path: s_v_190
+        weight: 1
+      - path: s_v_191
+        weight: 1
+      - path: s_v_192
+        weight: 1
+      - path: s_v_193
+        weight: 1
+      - path: s_v_194
+        weight: 1
+      - path: s_v_195
+        weight: 1
+      - path: s_v_196
+        weight: 1
+      - path: s_v_197
+        weight: 1
+      - path: s_v_198
+        weight: 1
+      - path: s_v_199
+        weight: 1
+      - path: s_v_200
+        weight: 1
+      - path: s_v_201
+        weight: 1
+      - path: s_v_202
+        weight: 1
+      - path: s_v_203
+        weight: 1
+      - path: s_v_204
+        weight: 1
+      - path: s_v_205
+        weight: 1
+      - path: s_v_206
+        weight: 1
+      - path: s_v_207
+        weight: 1
+      - path: s_v_208
+        weight: 1
+      - path: s_v_209
+        weight: 1
+      - path: s_v_210
+        weight: 1
+      - path: s_v_211
+        weight: 1
+      - path: s_v_212
+        weight: 1
+      - path: s_v_213
+        weight: 1
+      - path: s_v_214
+        weight: 1
+      - path: s_v_215
+        weight: 1
+      - path: s_v_216
+        weight: 1
+      - path: s_v_217
+        weight: 1
+      - path: s_v_218
+        weight: 1
+      - path: s_v_219
+        weight: 1
+      - path: s_v_220
+        weight: 1
+      - path: s_v_221
+        weight: 1
+      - path: s_v_222
+        weight: 1
+      - path: s_v_223
+        weight: 1
+      - path: s_v_224
+        weight: 1
+      - path: s_v_225
+        weight: 1
+      - path: s_v_226
+        weight: 1
+      - path: s_v_227
+        weight: 1
+      - path: s_v_228
+        weight: 1
+      - path: s_v_229
+        weight: 1
+      - path: s_v_230
+        weight: 1
+      - path: s_v_231
+        weight: 1
+      - path: s_v_232
+        weight: 1
+      - path: s_v_233
+        weight: 1
+      - path: s_v_234
+        weight: 1
+      - path: s_v_235
+        weight: 1
+      - path: s_v_236
+        weight: 1
+      - path: s_v_237
+        weight: 1
+      - path: s_v_238
+        weight: 1
+      - path: s_v_239
+        weight: 1
+      - path: s_v_240
+        weight: 1
+      - path: s_v_241
+        weight: 1
+      - path: s_v_242
+        weight: 1
+      - path: s_v_243
+        weight: 1
+      - path: s_v_244
+        weight: 1
+      - path: s_v_245
+        weight: 1
+      - path: s_v_246
+        weight: 1
+      - path: s_v_247
+        weight: 1
+      - path: s_v_248
+        weight: 1
+      - path: s_v_249
+        weight: 1
+      - path: s_v_250
+        weight: 1
+      - path: s_v_251
+        weight: 1
+      - path: s_v_252
+        weight: 1
+      - path: s_v_253
+        weight: 1
+      - path: s_v_254
+        weight: 1
+      - path: s_v_255
+        weight: 1
+      - path: s_v_256
+        weight: 1
+      - path: s_v_257
+        weight: 1
+      - path: s_v_258
+        weight: 1
+      - path: s_v_259
+        weight: 1
+      - path: s_v_260
+        weight: 1
+      - path: s_v_261
+        weight: 1
+      - path: s_v_262
+        weight: 1
+      - path: s_v_263
+        weight: 1
+      - path: s_v_264
+        weight: 1
+      - path: s_v_265
+        weight: 1
+      - path: s_v_266
+        weight: 1
+      - path: s_v_267
+        weight: 1
+      - path: s_v_268
+        weight: 1
+      - path: s_v_269
+        weight: 1
+      - path: s_v_270
+        weight: 1
+      - path: s_v_271
+        weight: 1
+      - path: s_v_272
+        weight: 1
+      - path: s_v_273
+        weight: 1
+      - path: s_v_274
+        weight: 1
+      - path: s_v_275
+        weight: 1
+      - path: s_v_276
+        weight: 1
+      - path: s_v_277
+        weight: 1
+      - path: s_v_278
+        weight: 1
+      - path: s_v_279
+        weight: 1
+      - path: s_v_280
+        weight: 1
+      - path: s_v_281
+        weight: 1
+      - path: s_v_282
+        weight: 1
+      - path: s_v_283
+        weight: 1
+      - path: s_v_284
+        weight: 1
+      - path: s_v_285
+        weight: 1
+      - path: s_v_286
+        weight: 1
+      - path: s_v_287
+        weight: 1
+      - path: s_v_288
+        weight: 1
+      - path: s_v_289
+        weight: 1
+      - path: s_v_290
+        weight: 1
+      - path: s_v_291
+        weight: 1
+      - path: s_v_292
+        weight: 1
+      - path: s_v_293
+        weight: 1
+      - path: s_v_294
+        weight: 1
+      - path: s_v_295
+        weight: 1
+      - path: s_v_296
+        weight: 1
+      - path: s_v_297
+        weight: 1
+      - path: s_v_298
+        weight: 1
+      - path: s_v_299
+        weight: 1
+      - path: s_v_300
+        weight: 1
+      - path: s_v_301
+        weight: 1
+      - path: s_v_302
+        weight: 1
+      - path: s_v_303
+        weight: 1
+      - path: s_v_304
+        weight: 1
+      - path: s_v_305
+        weight: 1
+      - path: s_v_306
+        weight: 1
+      - path: s_v_307
+        weight: 1
+      - path: s_v_308
+        weight: 1
+      - path: s_v_309
+        weight: 1
+      - path: s_v_310
+        weight: 1
+      - path: s_v_311
+        weight: 1
+      - path: s_v_312
+        weight: 1
+      - path: s_v_313
+        weight: 1
+      - path: s_v_314
+        weight: 1
+      - path: s_v_315
+        weight: 1
+      - path: s_v_316
+        weight: 1
+      - path: s_v_317
+        weight: 1
+      - path: s_v_318
+        weight: 1
+      - path: s_v_319
+        weight: 1
+      - path: s_v_320
+        weight: 1
+      - path: s_v_321
+        weight: 1
+      - path: s_v_322
+        weight: 1
+      - path: s_v_323
+        weight: 1
+      - path: s_v_324
+        weight: 1
+      - path: s_v_325
+        weight: 1
+      - path: s_v_326
+        weight: 1
+      - path: s_v_327
+        weight: 1
+      - path: s_v_328
+        weight: 1
+      - path: s_v_329
+        weight: 1
+      - path: s_v_330
+        weight: 1
+      - path: s_v_331
+        weight: 1
+      - path: s_v_332
+        weight: 1
+      - path: s_v_333
+        weight: 1
+      - path: s_v_334
+        weight: 1
+      - path: s_v_335
+        weight: 1
+      - path: s_v_336
+        weight: 1
+      - path: s_v_337
+        weight: 1
+      - path: s_v_338
+        weight: 1
+      - path: s_v_339
+        weight: 1
+      - path: s_v_340
+        weight: 1
+      - path: s_v_341
+        weight: 1
+      - path: s_v_342
+        weight: 1
+      - path: s_v_343
+        weight: 1
+      - path: s_v_344
+        weight: 1
+      - path: s_v_345
+        weight: 1
+      - path: s_v_346
+        weight: 1
+      - path: s_v_347
+        weight: 1
+      - path: s_v_348
+        weight: 1
+      - path: s_v_349
+        weight: 1
+      - path: s_v_350
+        weight: 1
+      - path: s_v_351
+        weight: 1
+      - path: s_v_352
+        weight: 1
+      - path: s_v_353
+        weight: 1
+      - path: s_v_354
+        weight: 1
+      - path: s_v_355
+        weight: 1
+      - path: s_v_356
+        weight: 1
+      - path: s_v_357
+        weight: 1
+      - path: s_v_358
+        weight: 1
+      - path: s_v_359
+        weight: 1
+      - path: s_v_360
+        weight: 1
+      - path: s_v_361
+        weight: 1
+      - path: s_v_362
+        weight: 1
+      - path: s_v_363
+        weight: 1
+      - path: s_v_364
+        weight: 1
+      - path: s_v_365
+        weight: 1
+      - path: s_v_366
+        weight: 1
+      - path: s_v_367
+        weight: 1
+      - path: s_v_368
+        weight: 1
+      - path: s_v_369
+        weight: 1
+      - path: s_v_370
+        weight: 1
+      - path: s_v_371
+        weight: 1
+      - path: s_v_372
+        weight: 1
+      - path: s_v_373
+        weight: 1
+      - path: s_v_374
+        weight: 1
+      - path: s_v_375
+        weight: 1
+      - path: s_v_376
+        weight: 1
+      - path: s_v_377
+        weight: 1
+      - path: s_v_378
+        weight: 1
+      - path: s_v_379
+        weight: 1
+      - path: s_v_380
+        weight: 1
+      - path: s_v_381
+        weight: 1
+      - path: s_v_382
+        weight: 1
+      - path: s_v_383
+        weight: 1
+      - path: s_v_384
+        weight: 1
+      - path: s_v_385
+        weight: 1
+      - path: s_v_386
+        weight: 1
+      - path: s_v_387
+        weight: 1
+      - path: s_v_388
+        weight: 1
+      - path: s_v_389
+        weight: 1
+      - path: s_v_390
+        weight: 1
+      - path: s_v_391
+        weight: 1
+      - path: s_v_392
+        weight: 1
+      - path: s_v_393
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .25
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

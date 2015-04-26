@@ -1,33 +1,9 @@
-﻿using UnityEngine;
+﻿
+
+using UnityEngine;
 using System.Collections;
 
 public class CamTexture : MonoBehaviour {
-
-	/*------------------------*/
-	/// <summary>
-	/// experimental AR vars
-	/// </summary>
-	/*public float m_frustumLength = 3.0f; // HACK : Chase
-	public Material m_screenMaterial;
-	
-	private Texture2D m_texture;
-	private float m_frustumHeight = 0.0f;
-	private float m_frustumWidth = 0.0f;
-	private Vector3[] m_frustumPoints;
-	private Mesh m_mesh;
-	private MeshFilter m_meshFilter;
-	//private TangoApplication m_tangoApplication;
-	private bool m_readyToDraw = false;
-	
-	/// <summary>
-	/// Gets the frustum points of AR Screen.
-	/// </summary>
-	/// <returns>Retursn the frustum points of AR Screen.</returns>
-	public Vector3[] GetFrustumPoints()
-	{
-		return m_frustumPoints;
-	}
-	/*-------------------*/
 
 	private int m_numCameras = 0;
 	public string deviceName;
@@ -46,139 +22,17 @@ public class CamTexture : MonoBehaviour {
 	GameObject lightGameObjectR;
 	GameObject backLight;
 
-	/*private void Awake()
-	{
-		///////object init//////////////////
-		m_player = GameObject.Find ("Player");
-		
-		lightGameObjectL = new GameObject ("The Light1");
-		lightGameObjectL.AddComponent<Light> ();
-		lightGameObjectL.light.type = LightType.Directional;
-		lightGameObjectL.light.intensity = 0f;
-		
-		//lightGameObjectL.light.range = 30.0f;
-		lightGameObjectR = new GameObject ("The Light2");
-		lightGameObjectR.AddComponent<Light> ();
-		lightGameObjectR.light.type = LightType.Directional;
-		lightGameObjectR.light.intensity = 0f;
-		//lightGameObjectR.light.range = 30.0f;
-		
-		backLight = new GameObject ("Back Light");
-		backLight.AddComponent<Light> ();
-		backLight.light.type = LightType.Spot;
-		backLight.light.intensity = 0f;
-		backLight.light.range = 36f;
-		//////////////////////////
-
-		m_frustumPoints = new Vector3[5];
-		
-		m_meshFilter = GetComponent<MeshFilter>();
-		m_mesh = new Mesh();
-		ResizeScreen();
-		
-		transform.rotation = Quaternion.identity;
-		
-		m_texture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGBA32, false);
-		
-		m_texture.Apply();
-		if(m_screenMaterial != null)
-		{
-			m_screenMaterial.mainTexture = m_texture;
-			m_meshFilter.renderer.material = m_screenMaterial;
-			//VideoOverlayProvider.ExperimentalConnectTexture(TangoEnums.TangoCameraId.TANGO_CAMERA_COLOR, m_texture.GetNativeTextureID(), _OnUnityFrameAvailable);
-			Debug.Log("Texture set!");
-		}
-		
-		//m_tangoApplication = FindObjectOfType<Tango.TangoApplication>();
-		
-		/*if(m_tangoApplication != null)
-		{
-			m_tangoApplication.RegisterPermissionsCallback(_OnTangoApplicationPermissionsEvent);
-		}*/
-	/*}*/
-	
-	/// <summary>
-	/// Creates a plane and sizes it for the AR Screen.
-	/// </summary>
-	/*public void ResizeScreen()
-	{
-		m_frustumHeight = 2.0f * m_frustumLength * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad);
-		m_frustumWidth = m_frustumHeight * camera.aspect;
-		
-		m_frustumPoints[0] = Vector3.zero;
-		m_frustumPoints[1] = new Vector3(-m_frustumWidth, -m_frustumHeight, m_frustumLength);
-		m_frustumPoints[2] = new Vector3(-m_frustumWidth, m_frustumHeight, m_frustumLength);
-		m_frustumPoints[3] = new Vector3(m_frustumWidth, -m_frustumHeight, m_frustumLength);
-		m_frustumPoints[4] = new Vector3(m_frustumWidth, m_frustumHeight, m_frustumLength);
-		
-		transform.position = new Vector3(0.0f, 0.0f, m_frustumLength);
-		
-		// verts
-		Vector3[] verts = new Vector3[6];
-		verts[0] = m_frustumPoints[1] + transform.position;
-		verts[1] = m_frustumPoints[2] + transform.position;
-		verts[2] = m_frustumPoints[3] + transform.position;
-		verts[3] = m_frustumPoints[3] + transform.position;
-		verts[4] = m_frustumPoints[2] + transform.position;
-		verts[5] = m_frustumPoints[4] + transform.position;
-		
-		// indices
-		int[] indices = new int[6];
-		indices[0] = 0;
-		indices[1] = 1;
-		indices[2] = 2;
-		indices[3] = 3;
-		indices[4] = 4;
-		indices[5] = 5;
-		
-		// uvs
-		Vector2[] uvs = new Vector2[6];
-		uvs[0] = new Vector2(0, 0);
-		uvs[1] = new Vector2(0, 1f);
-		uvs[2] = new Vector2(1f, 0);
-		uvs[3] = new Vector2(1f, 0);
-		uvs[4] = new Vector2(0, 1f);
-		uvs[5] = new Vector2(1f, 1f);
-		
-		m_mesh.Clear();
-		m_mesh.vertices = verts;
-		m_mesh.triangles = indices;
-		m_mesh.uv = uvs;
-		m_meshFilter.mesh = m_mesh;
-		m_mesh.RecalculateNormals();
+	void Awake() {
+		/*Vector3 prev_rot = new Vector3(
+			Camera.main.transform.rotation[0],
+			Camera.main.transform.rotation[1],
+			Camera.main.transform.rotation[2]);
+		Camera.main.transform.rotation =  
+			new Quaternion (prev_rot[0] - 0.1f, 
+			                prev_rot[1], 
+			                prev_rot[2],
+			                Camera.main.transform.rotation[3]);*/
 	}
-	
-	/// <summary>
-	/// Event handler for tango application permissions event.
-	/// </summary>
-	/// <param name="permissionsGranted">If set to <c>true</c> permissions granted.</param>
-	private void _OnTangoApplicationPermissionsEvent(bool permissionsGranted)
-	{
-		m_readyToDraw = true;
-	}*/
-	
-	/// <summary>
-	/// Event handler for unity frame available.
-	/// </summary>
-	/// <param name="callbackContext">Callback context.</param>
-	/// <param name="cameraId">Camera identifier.</param>
-	private void _OnUnityFrameAvailable(System.IntPtr callbackContext, Tango.TangoEnums.TangoCameraId cameraId)
-	{
-		// Do fun stuff here!
-	}
-	
-	/// <summary>
-	/// Raises the pre render event.
-	/// </summary>
-	/*void OnPreRender()
-	{
-		if(m_readyToDraw)
-		{
-			VideoOverlayProvider.RenderLatestFrame(TangoEnums.TangoCameraId.TANGO_CAMERA_COLOR);
-			GL.InvalidateState();
-		}
-	}*/
-
 	// Use this for initialization
 	void Start () {
 
@@ -203,21 +57,53 @@ public class CamTexture : MonoBehaviour {
 		backLight.light.type = LightType.Spot;
 		backLight.light.intensity = 0f;
 		backLight.light.range = 36f;
-
-		//m_frustumHeight = 2.0f * m_frustumLength * Mathf.Tan(camera.fieldOfView * 0.5f * Mathf.Deg2Rad);
-		//m_frustumWidth = m_frustumHeight * camera.aspect;
+		
 		float W = Screen.width;
 		float H = Screen.height;
 		float InsetX = -(W / 2);
 		float InsetY = -(H / 2);
 		guiTexture.pixelInset = new Rect (InsetX, InsetY, W, H);
 
-		devices = WebCamTexture.devices;
-		m_numCameras = devices.Length;
-		deviceName = devices[0].name;
-		WebCamTexture wct = new WebCamTexture(deviceName);
-		guiTexture.texture = wct;
-		wct.Play();
+		//******test
+		//testLights ();
+
+		//***** end test
+
+		//devices = WebCamTexture.devices;
+		//m_numCameras = devices.Length;
+		//deviceName = devices[0].name;
+		//WebCamTexture wct = new WebCamTexture(deviceName);
+		//guiTexture.texture = wct;
+		//wct.Play();
+	}
+
+	void testLights() {
+		float angleH1 = (float) 25;
+		angleH1 = m_pi - angleH1 * m_pi / 180.0f  + m_pi / 2f;
+		float angleV1 = (float)0;
+		angleV1 = m_pi + (float) angleV1 * m_pi / 180f + m_pi / 2f;
+		//angleV1 = angleV1 * m_pi / 180.0f;
+		Vector3 lightPos1 = new Vector3(
+			m_player.transform.position.x + m_lightPosRadius * Mathf.Cos(angleH1) * Mathf.Sin (angleV1),
+			m_player.transform.position.y + m_lightPosRadius * Mathf.Cos (angleV1),
+			m_player.transform.position.z + m_lightPosRadius * Mathf.Sin(angleH1) * Mathf.Sin (angleV1));
+		lightGameObjectR.transform.position = lightPos1;
+		lightGameObjectR.transform.rotation = new Quaternion ();
+		lightGameObjectR.transform.LookAt (m_player.transform);
+		lightGameObjectR.light.intensity = 0.5f;
+		
+		float angleH2 = (float) -130;
+		angleH2 = m_pi - angleH2 * m_pi / 180.0f + m_pi / 2;
+		float angleV2 = (float) 20;
+		angleV2 = m_pi + (float) angleV2 * m_pi / 180f + m_pi / 2f;
+		Vector3 lightPos2 = new Vector3(
+			m_player.transform.position.x + m_lightPosRadius * Mathf.Cos(angleH2) * Mathf.Sin (angleV2),
+			m_player.transform.position.y + m_lightPosRadius * Mathf.Cos (angleV2),
+			m_player.transform.position.z + m_lightPosRadius * Mathf.Sin(angleH2) * Mathf.Sin (angleV2));
+		lightGameObjectL.transform.position = lightPos2;
+		lightGameObjectL.transform.rotation = new Quaternion ();
+		lightGameObjectL.transform.LookAt (m_player.transform);
+		lightGameObjectL.light.intensity = 0.5f;
 	}
 
 	public void receiveMessage(string message) {
@@ -264,6 +150,11 @@ public class CamTexture : MonoBehaviour {
 		int backG = int.Parse (m_luminosityValues [19]);
 		int backB = int.Parse (m_luminosityValues [20]);
 		int backCount = int.Parse (m_luminosityValues [21]);
+		int azimuth1 = int.Parse (m_luminosityValues [22]);
+		int elevation1 = int.Parse (m_luminosityValues [23]);
+		int azimuth2 = int.Parse (m_luminosityValues [24]);
+		int elevation2 = int.Parse (m_luminosityValues [25]);
+
 
 		if (posX > 0 && posY > 0) {
 			float spotA = (float) backCount / 432f / 768f * 180f * 10f;
@@ -293,6 +184,8 @@ public class CamTexture : MonoBehaviour {
 			secondLight = true;
 		}
 
+		GameObject light1;
+		GameObject light2;
 		if (leftC > rightC) {
 			float ratio = 1f;
 			if (!secondLight) {
@@ -317,6 +210,8 @@ public class CamTexture : MonoBehaviour {
 			lightGameObjectL.light.color = new Color(rf, gf, bf);
 			lightGameObjectL.light.intensity = (rf + gf + bf)/3.0f;
 
+			light1 = lightGameObjectL;
+			light2 = lightGameObjectR;
 			if (secondLight) {
 				ratio =(float) rightN / ambR - 1;
 				angle = m_lightAngle * ratio;
@@ -360,6 +255,8 @@ public class CamTexture : MonoBehaviour {
 			lightGameObjectR.light.color = new Color(rf, gf, bf);
 			lightGameObjectR.light.intensity = (rf + gf + bf)/3.0f;
 
+			light1 = lightGameObjectR;
+			light2 = lightGameObjectL;
 			if (secondLight) {
 				ratio =(float) leftN / ambL - 1;
 				angle = m_lightAngle * ratio;
@@ -380,6 +277,36 @@ public class CamTexture : MonoBehaviour {
 				lightGameObjectL.light.intensity = (rf + gf + bf)/3.0f;
 			}
 		}
+
+		//Lights from Masks, EXPERIMENTAL
+		// ************************** //
+		float angleH1 = (float) azimuth1;
+		angleH1 = m_pi - angleH1 * m_pi / 180.0f  + m_pi / 2f;
+		float angleV1 = (float)elevation1;
+		angleV1 = m_pi + (float) angleV1 * m_pi / 180f + m_pi / 2f;
+		//angleV1 = angleV1 * m_pi / 180.0f;
+		Vector3 lightPos1 = new Vector3(
+			m_player.transform.position.x + m_lightPosRadius * Mathf.Cos(angleH1) * Mathf.Sin (angleV1),
+			m_player.transform.position.y + m_lightPosRadius * Mathf.Cos (angleV1),
+			m_player.transform.position.z + m_lightPosRadius * Mathf.Sin(angleH1) * Mathf.Sin (angleV1));
+		light1.transform.position = lightPos1;
+		light1.transform.rotation = new Quaternion ();
+		light1.transform.LookAt (m_player.transform);
+		
+		float angleH2 = (float) azimuth2;
+		angleH2 = m_pi - angleH2 * m_pi / 180.0f + m_pi / 2;
+		float angleV2 = (float) elevation2;
+		angleV2 = m_pi + (float) angleV2 * m_pi / 180f + m_pi / 2f;
+		Vector3 lightPos2 = new Vector3(
+			m_player.transform.position.x + m_lightPosRadius * Mathf.Cos(angleH2) * Mathf.Sin (angleV2),
+			m_player.transform.position.y + m_lightPosRadius * Mathf.Cos (angleV2),
+			m_player.transform.position.z + m_lightPosRadius * Mathf.Sin(angleH2) * Mathf.Sin (angleV2));
+		light2.transform.position = lightPos2;
+		light2.transform.rotation = new Quaternion ();
+		light2.transform.LookAt (m_player.transform);
+		// ************************* // END EXPERIMENTAL
+
+		// ambient light
 		float af = (float) ambient / 255.0f;
 		RenderSettings.ambientLight = new Color (af, af, af);
 		Debug.Log (RenderSettings.ambientLight.ToString());

@@ -9,6 +9,8 @@ Project("{1D43C959-6CD3-208D-73E1-5230274C83FA}") = "LightSourceDetector", "Asse
 EndProject
 Project("{1D43C959-6CD3-208D-73E1-5230274C83FA}") = "LightSourceDetector", "Assembly-UnityScript.unityproj", "{3BF8CC31-7EAB-25E9-3159-2833CE263089}"
 EndProject
+Project("{1D43C959-6CD3-208D-73E1-5230274C83FA}") = "LightSourceDetector", "Assembly-UnityScript-Editor.unityproj", "{0433A8FA-36F2-9626-5BB2-49EC54825AE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,11 +33,15 @@ Global
 		{3BF8CC31-7EAB-25E9-3159-2833CE263089}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BF8CC31-7EAB-25E9-3159-2833CE263089}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BF8CC31-7EAB-25E9-3159-2833CE263089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0433A8FA-36F2-9626-5BB2-49EC54825AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0433A8FA-36F2-9626-5BB2-49EC54825AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0433A8FA-36F2-9626-5BB2-49EC54825AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0433A8FA-36F2-9626-5BB2-49EC54825AE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																			GlobalSection(MonoDevelopProperties) = preSolution
+																																																																		GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

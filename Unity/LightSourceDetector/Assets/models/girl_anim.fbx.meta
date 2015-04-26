@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: b230a5018f1b84143bae90a904ee696a
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: girl_1:girl
+    100002: girl_1:hair1
+    100004: girl_1:joint1
+    100006: girl_1:joint10
+    100008: girl_1:joint11
+    100010: girl_1:joint12
+    100012: girl_1:joint13
+    100014: girl_1:joint14
+    100016: girl_1:joint15
+    100018: girl_1:joint16
+    100020: girl_1:joint17
+    100022: girl_1:joint18
+    100024: girl_1:joint19
+    100026: girl_1:joint2
+    100028: girl_1:joint20
+    100030: girl_1:joint21
+    100032: girl_1:joint22
+    100034: girl_1:joint23
+    100036: girl_1:joint24
+    100038: girl_1:joint25
+    100040: girl_1:joint26
+    100042: girl_1:joint3
+    100044: girl_1:joint5
+    100046: girl_1:joint6
+    100048: girl_1:joint7
+    100050: girl_1:joint8
+    100052: girl_1:joint9
+    100054: girl_1:pCube4
+    100056: girl_1:polySurface5
+    100058: girl_1:polySurface6
+    100060: girl_1:polySurface7
+    100062: //RootNode
+    400000: girl_1:girl
+    400002: girl_1:hair1
+    400004: girl_1:joint1
+    400006: girl_1:joint10
+    400008: girl_1:joint11
+    400010: girl_1:joint12
+    400012: girl_1:joint13
+    400014: girl_1:joint14
+    400016: girl_1:joint15
+    400018: girl_1:joint16
+    400020: girl_1:joint17
+    400022: girl_1:joint18
+    400024: girl_1:joint19
+    400026: girl_1:joint2
+    400028: girl_1:joint20
+    400030: girl_1:joint21
+    400032: girl_1:joint22
+    400034: girl_1:joint23
+    400036: girl_1:joint24
+    400038: girl_1:joint25
+    400040: girl_1:joint26
+    400042: girl_1:joint3
+    400044: girl_1:joint5
+    400046: girl_1:joint6
+    400048: girl_1:joint7
+    400050: girl_1:joint8
+    400052: girl_1:joint9
+    400054: girl_1:pCube4
+    400056: girl_1:polySurface5
+    400058: girl_1:polySurface6
+    400060: girl_1:polySurface7
+    400062: //RootNode
+    4300000: girl_1:pCube4
+    4300002: girl_1:hair1
+    4300004: girl_1:polySurface6
+    4300006: girl_1:polySurface7
+    7400000: Run
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: girl_1:hair1
+    13700002: girl_1:pCube4
+    13700004: girl_1:polySurface6
+    13700006: girl_1:polySurface7
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Run
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 52
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: girl_1:girl
+        weight: 1
+      - path: girl_1:girl/girl_1:hair1
+        weight: 1
+      - path: girl_1:girl/girl_1:pCube4
+        weight: 1
+      - path: girl_1:girl/girl_1:polySurface5
+        weight: 1
+      - path: girl_1:girl/girl_1:polySurface5/girl_1:polySurface6
+        weight: 1
+      - path: girl_1:girl/girl_1:polySurface5/girl_1:polySurface7
+        weight: 1
+      - path: girl_1:joint1
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint13
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint13/girl_1:joint14
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint13/girl_1:joint14/girl_1:joint15
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint13/girl_1:joint14/girl_1:joint15/girl_1:joint16
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint13/girl_1:joint14/girl_1:joint15/girl_1:joint16/girl_1:joint17
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint13/girl_1:joint14/girl_1:joint15/girl_1:joint18
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint19
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint19/girl_1:joint20
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint19/girl_1:joint20/girl_1:joint21
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint19/girl_1:joint20/girl_1:joint21/girl_1:joint22
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint19/girl_1:joint20/girl_1:joint21/girl_1:joint22/girl_1:joint23
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint19/girl_1:joint20/girl_1:joint21/girl_1:joint24
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint25
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint2/girl_1:joint3/girl_1:joint25/girl_1:joint26
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint5
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint5/girl_1:joint6
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint5/girl_1:joint6/girl_1:joint7
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint5/girl_1:joint6/girl_1:joint7/girl_1:joint8
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint9
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint9/girl_1:joint10
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint9/girl_1:joint10/girl_1:joint11
+        weight: 1
+      - path: girl_1:joint1/girl_1:joint9/girl_1:joint10/girl_1:joint11/girl_1:joint12
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .25
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
